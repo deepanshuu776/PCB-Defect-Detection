@@ -1,0 +1,8 @@
+
+path: C:\Users\Deepanshu Saini\OneDrive\Documents\GitHub\PCB-Defect-Detection\datasets\DeepPCB_YOLO
+train: images/train
+val: images/val
+
+nc: 6
+names: ['open', 'short', 'mousebite', 'spur', 'copper', 'pin-hole']
+    

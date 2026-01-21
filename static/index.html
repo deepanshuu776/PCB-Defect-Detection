@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Defect Detective</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">DeepPCB AI</div>
+        <h1>Automated PCB Defect Detection</h1>
+        <p>Upload your PCB circuit image below to instantly identify manufacturing faults using YOLOv8 computer vision.</p>
+    </header>
+
+    <main class="container">
+        <div class="upload-section">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <label for="fileInput" class="upload-box" id="dropZone">
+                <div class="icon">☁️</div>
+                <h3>Click to Upload PCB Image</h3>
+                <p>or drag and drop file here</p>
+            </label>
+            <button id="analyzeBtn" class="primary-btn" disabled>Analyze Circuit</button>
+        </div>
+
+        <div class="results-section" id="resultsArea" style="display: none;">
+            <div class="image-comparison">
+                <div class="card">
+                    <h4>Original</h4>
+                    <img id="originalImg" src="" alt="Original">
+                </div>
+                <div class="card">
+                    <h4>AI Analysis</h4>
+                    <img id="processedImg" src="" alt="Processed">
+                </div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <span class="label">Total Defects</span>
+                    <span class="value" id="defectCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Status</span>
+                    <span class="value" id="statusText">--</span>
+                </div>
+            </div>
+
+            <div class="log-panel">
+                <h4>Defect Log</h4>
+                <ul id="defectList"></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Built with ❤️ and Copyright &copy; Deepanshu Saini</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
